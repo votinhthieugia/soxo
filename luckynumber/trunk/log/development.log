@@ -1,0 +1,51 @@
+# Logfile created on Sun Nov 27 12:17:14 +0700 2011  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PredictController#index (for 127.0.0.1 at 2011-11-27 12:17:25) [GET]
+  Parameters: {"date"=>"25-11-2011"}
+  [4;35;1mResult Load (42.2ms)[0m   [0mSELECT * FROM `results` WHERE (date='25-11-2011') LIMIT 1[0m
+
+MissingSourceFile (no such file to load -- nokogiri):
+  app/models/loader.rb:4
+  app/controllers/predict_controller.rb:17:in `index'
+
+Rendered rescues/_trace (94.5ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PredictController#index (for 127.0.0.1 at 2011-11-27 12:20:33) [GET]
+  Parameters: {"date"=>"25-11-2011"}
+  [4;35;1mResult Load (0.5ms)[0m   [0mSELECT * FROM `results` WHERE (date='25-11-2011') LIMIT 1[0m
+  [4;36;1mResult Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `results`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mResult Create (0.3ms)[0m   [0;1mINSERT INTO `results` (`created_at`, `updated_at`, `date`, `numbers`) VALUES('2011-11-27 05:20:35', '2011-11-27 05:20:35', '25-11-2011', '65880524641355861611407762489844463773253768273287903264700688629783057663193328059956963053583784826797630')[0m
+  [4;35;1mSQL (31.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mResult Load (0.6ms)[0m   [0;1mSELECT * FROM `results` WHERE (date='25-11-2011') LIMIT 1[0m
+Completed in 2005ms (View: 1, DB: 35) | 200 OK [http://127.0.0.1/result/25-11-2011]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PredictController#bridge (for 127.0.0.1 at 2011-11-27 15:27:40) [GET]
+  Parameters: {"straight"=>"1", "for_date"=>"6-11-2011", "num_days"=>"5"}
+Completed in 5ms (View: 0, DB: 0) | 200 OK [http://localhost/bridge/6-11-2011/5/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PredictController#bridge (for 127.0.0.1 at 2011-11-27 15:28:21) [GET]
+  Parameters: {"straight"=>"1", "for_date"=>"6-11-2011", "num_days"=>"5"}
+Completed in 5ms (View: 0, DB: 0) | 200 OK [http://localhost/bridge/6-11-2011/5/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PredictController#bridge (for 127.0.0.1 at 2011-11-27 15:29:18) [GET]
+  Parameters: {"straight"=>"1", "for_date"=>"6-11-2011", "num_days"=>"5"}
+
+NameError (undefined local variable or method `date' for Processor:Class):
+  app/models/processor.rb:3:in `find_bridge'
+  app/controllers/predict_controller.rb:88:in `bridge'
+
+Rendered rescues/_trace (31.7ms)
+Rendered rescues/_request_and_response (47.4ms)
+Rendering rescues/layout (internal_server_error)

@@ -1,0 +1,8 @@
+--- 
+log_file: log/mongrel.log
+port: 3000
+pid_file: tmp/pids/dispatch.pid
+servers: 1
+environment: production
+user: root
+group: root
